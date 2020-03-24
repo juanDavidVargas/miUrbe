@@ -1,0 +1,60 @@
+
+#container-cartelera{
+  background-color: #FFF !important;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  border-radius: 3px;
+}
+
+.titlecartelera{
+  font-size: 25px;
+  color: #91202E;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+.card-title{
+  color: #C0CCDA;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.card-date{
+  color: #C0CCDA;
+  font-weight: 600;
+}
+
+.card{
+  margin-bottom: 5%;
+}
+
+.btn-footer-cartelera{
+  background-color: #E5E9F2;
+  color: #91202E;
+  font-weight: 600;
+  text-align: center;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+  margin-bottom: 5%;
+}
+
+.btn-footer-cartelera:hover{
+  text-decoration: none;
+  background-color: #E5E9F2;
+  color: #91202E;
+}
+
+@media screen and (max-width: 770px)
+{
+  .btn-footer-cartelera{
+    display: flex;
+    float: left;
+  }
+
+  .card-date{
+    text-align: left !important;
+    margin: -6% 0 2% 0;
+  }
+}

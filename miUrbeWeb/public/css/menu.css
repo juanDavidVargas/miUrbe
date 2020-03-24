@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'GrandHotel';
+  src: url('../fonts/grand-hotel.ttf');
+}
+
+.user a{
+  text-decoration: none;
+}
+
+.user{
+  list-style: none;
+  float: right;
+  padding: 1%;
+}
+
+.signout{
+  padding-left: 15%;
+}
+
+body{
+  background-color: #FEDADA;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.menu{
+  background-color: #FFF;
+  width: 100%;
+}
+
+.margin{
+  margin-top: -5%;
+}
+
+.logo{
+  margin: 0 0 0 10%;
+  width: 150px;
+  height: 150px;
+}
+
+.title{
+  font-family: 'GrandHotel';
+  color: #91202E;
+  font-size: 50px;
+  padding: 12% 0 0 0;
+}
+
+.subtitle{
+  color: #CCC;
+  font-size: 20px;
+}
+
+nav{
+  float: right;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+}
+
+.navbar-brand{
+  font-size: 15px !important;
+}
+
+h3{
+  margin: 8% 0 0 0;
+  float: right;
+  color: #91202E;
+}
+
+
+@media screen and (max-width: 765px)
+{
+  .title{
+    font-family: 'GrandHotel';
+    color: #91202E;
+    font-size: 50px;
+    padding: 0;
+    margin-left: 10%;
+  }
+  .subtitle{
+    color: #CCC;
+    font-size: 15px;
+    margin-left: 10%;
+    margin-bottom: 10%;
+  }
+
+  .user a{
+    text-decoration: none;
+  }
+
+  .user{
+    list-style: none;
+    margin-top: -45%;
+    margin-right: 2%;
+  }
+
+}
