@@ -1,0 +1,25 @@
+antes de entrar, si tienen varias admin seleccionar cual usuario
+
+admin --> filtre por admin
+residentes --> filtrar por residentes
+
+tope de cargas
+ventana de config --> numero de mensajes en cartelera
+
+
+piscina no
+parque no
+
+administrador --> reservar o no
+mobile --> uso del sistema
+
+web --> modulo de administracion --> modificacion
+usuario normal
+
+productos y servicios --> usuario
+apto --> validar los casos, si hay listar, sino formulario para crear
+
+boton al final para regresar al listado.
+
+menu cambiar de unidad
+cartelera de la unidad --> boton 
