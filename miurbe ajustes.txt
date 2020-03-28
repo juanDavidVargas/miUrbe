@@ -6,7 +6,6 @@ residentes --> filtrar por residentes
 tope de cargas
 ventana de config --> numero de mensajes en cartelera
 
-
 piscina no
 parque no
 
