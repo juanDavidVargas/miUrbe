@@ -8,6 +8,3 @@ PREGUNTAS CON RESPECTO AL MODELO RELACIONAL
 
 4. En la pantalla "mi Urbe Nueva Urbanización" el campo de estado, ¿Es una lista desplegable que viene desde la base de datos?¿Va a cargar por defecto un estado específico(dato quemado)?¿Va a ser un campo de texto donde yo puedo digitar el estado? lista desplegable desde la BD
 
-5. En la pantalla "mi Urbe Nueva Urbanización" el campo moneda ¿Va a ser una lista desplegable desde la base de datos? o ¿Va a ser un campo de texto?
-lista desplegable desde DB
-
