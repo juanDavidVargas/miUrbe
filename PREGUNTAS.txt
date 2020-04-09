@@ -1,9 +1,0 @@
-PREGUNTAS CON RESPECTO AL MODELO RELACIONAL
-
-1. En la pantalla de registro va a existir la posibilidad de cargar una imagen, ¿Donde se va a almacenar dicha imagen? misma carpeta proyecto
-
-2. ¿Cuál va a ser la página de aterrizaje luego de iniciar sesión como un usuario que no es administrador?
-
-
-4. En la pantalla "mi Urbe Nueva Urbanización" el campo de estado, ¿Es una lista desplegable que viene desde la base de datos?¿Va a cargar por defecto un estado específico(dato quemado)?¿Va a ser un campo de texto donde yo puedo digitar el estado? lista desplegable desde la BD
-

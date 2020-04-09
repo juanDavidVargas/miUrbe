@@ -12,9 +12,9 @@
       &nbsp;
     </div>
   </div>
-<br/>
-<br/>
-<form class="form-horizontal" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+  <br />
+  <br />
+  <form class="form-horizontal" action="<?= URL; ?>administracion/crearNuevaUrbanizacion" method="post" enctype="multipart/form-data" autocomplete="off">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-3">
         &nbsp;
@@ -23,11 +23,11 @@
         &nbsp;
       </div>
       <div class="col-xs-12 col-sm-12 col-md-5">
-          <img src="<?= URL; ?>img/casita.jpg" alt="perfil" class="fotoperfil">
-          <p>
-            <label for="fotoUrb" class="upload-foto">Cargar Logo Urbanización</label>
-            <input id="fotoUrb" name="fotourb" type="file" accept="image/*"/>
-          </p>
+        <img src="<?= URL; ?>img/casita.jpg" alt="perfil" class="fotoperfil">
+        <p>
+          <label for="fotoUrb" class="upload-foto">Cargar Logo Urbanización</label>
+          <input id="fotoUrb" name="fotourb" type="file" accept="image/*" />
+        </p>
       </div>
     </div>
     <div class="row">
@@ -98,7 +98,18 @@
           <label for="moneda" class="color">Moneda</label>
         </div>
         <div class="form-group">
-          <input type="text" name="moneda" id="moneda" placeholder="Moneda" class="form-control" required>
+          <select name="moneda" id="moneda" placeholder="Moneda" class="form-control" required>
+            <option value="">---</option>
+            <?php if (isset($_GET['id'])) : ?>
+              <?php foreach ($moneda as $value) : ?>
+                <option value="<?= $value['SiglasMoneda']; ?>" <?= $value['SiglasMoneda'] == $value['SiglasMoneda'] ? 'selected="selected"' : '' ?>><?= $value['SiglasMoneda'] .  " - " . $value['NombreMoneda']; ?></option>
+              <?php endforeach; ?>
+            <?php else : ?>
+              <?php foreach ($moneda as $value) : ?>
+                <option value="<?= $value['SiglasMoneda']; ?>"><?= $value['SiglasMoneda'] .  " - " . $value['NombreMoneda']; ?></option>
+              <?php endforeach; ?>
+            <?php endif; ?>
+          </select>
         </div>
       </div>
     </div>
@@ -108,7 +119,7 @@
           <label for="numaptos" class="color">Número Apartamentos</label>
         </div>
         <div class="form-group">
-          <input type="number" name="numaptos" id="numaptos" placeholder="Número Apartamentos" class="form-control" min="1" max="1000000" required>
+          <input type="number" name="numaptos" id="numaptos" placeholder="Número Apartamentos" class="form-control" min="1" max="1000" required>
         </div>
       </div>
     </div>
@@ -126,6 +137,15 @@
       </div>
       <div class="col-xs-12 col-sm-12 col-md-5">
         <button type="submit" name="guardarurb" class="btnguardar"><i class="fas fa-plus"></i>&nbsp;Adicionar</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
+        <button type="button" name="volver" class="btnvolver">
+          <a href="<?= URL; ?>administracion/dashboard">
+            <i class="fas fa-arrow-alt-circle-left"></i>&nbsp;Volver
+          </a>
+        </button>
       </div>
     </div>
   </form>

@@ -4,16 +4,16 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
       <nav aria-label="breadcrumb" id="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="<?= URL; ?>home/index">Home</a></li>
-        <li class="breadcrumb-item"><a href="<?= URL; ?>home/inicioSesion">Inicio Sesion</a></li>
-        <li class="breadcrumb-item"><a href="<?= URL; ?>home/registro">Registro</a></li>
-        <?php if ($_SERVER['REQUEST_URI'] == "/miUrbe/home/recuperarPassword"):?>
-        <li class="breadcrumb-item active"><a href="<?= URL; ?>home/recuperarPassword">Recuperar Contraseña</a></li>
-      <?php else: ?>
-      <?php endif; ?>
-      </ol>
-    </nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="<?= URL; ?>home/index">Home</a></li>
+          <li class="breadcrumb-item"><a href="<?= URL; ?>home/inicioSesion">Inicio Sesion</a></li>
+          <li class="breadcrumb-item"><a href="<?= URL; ?>home/registro">Registro</a></li>
+          <?php if ($_SERVER['REQUEST_URI'] == "/miUrbe/home/recuperarPassword") : ?>
+            <li class="breadcrumb-item active"><a href="<?= URL; ?>home/recuperarPassword">Recuperar Contraseña</a></li>
+          <?php else : ?>
+          <?php endif; ?>
+        </ol>
+      </nav>
     </div>
   </div>
   <div class="row">
@@ -21,24 +21,28 @@
       &nbsp;
     </div>
     <div class="col-xs-12 col-sm-12 col-md-6">
-      <?php if (isset($_SESSION['erroremail']) && isset($_SESSION['errortype']) &&
-                $_SESSION['errortype'] == "danger"): ?>
+      <?php if (
+        isset($_SESSION['erroremail']) && isset($_SESSION['errortype']) &&
+        $_SESSION['errortype'] == "danger"
+      ) : ?>
 
         <div class="alert alert-<?= $_SESSION['errortype'] ?>" role="alert">
           <i class="fas fa-exclamation-triangle"></i>&nbsp;<?= $_SESSION['erroremail']; ?>
         </div>
 
-      <?php session_unset(); ?>
+        <?php session_unset(); ?>
       <?php endif; ?>
 
-      <?php if (isset($_SESSION['message']) && isset($_SESSION['type']) &&
-                $_SESSION['type'] == "success"): ?>
+      <?php if (
+        isset($_SESSION['message']) && isset($_SESSION['type']) &&
+        $_SESSION['type'] == "success"
+      ) : ?>
 
         <div class="alert alert-<?= $_SESSION['type'] ?>" role="alert">
           <i class="fas fa-exclamation-triangle"></i>&nbsp;<?= $_SESSION['message']; ?>
         </div>
 
-      <?php session_unset(); ?>
+        <?php session_unset(); ?>
       <?php endif; ?>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-3">
@@ -57,7 +61,7 @@
       </div>
       <div class="col-xs-12 col-sm-12 col-md-4 top">
         <div class="form-group">
-          <label for="email" class="color">mi Correo Electrónico</label>
+          <label for="email" class="color">mi Correo Electrónico <span class="obligatorio">*</span></label>
         </div>
         <div class="form-group">
           <input type="email" name="email" id="email" class="form-control" autofocus required onkeyup="formatoEmailUser()">

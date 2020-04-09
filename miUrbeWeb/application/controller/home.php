@@ -96,6 +96,55 @@ class Home extends Controller
     }
   }
 
+  public function validarInicioSesionAdmin()
+  {
+
+    if (isset($_POST['btn-admin']) && isset($_POST['correoadmin']) && isset($_POST['passwordadmin'])) {
+
+      $correo = $_POST['correoadmin'];
+      $pass = $_POST['passwordadmin'];
+
+      if (
+        strstr($correo, "@") && strstr($correo, ".") &&
+        strlen($pass) >= 8) 
+        {
+        $this->mdlLogin->__SET("Correo", $correo);
+        $this->mdlLogin->__SET("Clave", $this->Encrypt($pass));
+        $user = $this->mdlLogin->consultarDatosUsuario();
+
+        if (count($user) != 0) {
+          foreach ($user as $value) {
+            if (
+              $value['Correo'] == $correo &&
+              $value['Clave'] == $this->Encrypt($pass)
+            ) {
+              $_SESSION['SESION_INICIADA'] = TRUE;
+              $_SESSION['USUARIO_ID'] = $value['idUsuario'];
+              $_SESSION['EMAIL'] = $value['Correo'];
+
+              header("Location: " . URL . "administracion/dashboard");
+              exit;
+            }
+          }
+        } else {
+          $_SESSION['type'] = "danger";
+          $_SESSION['message'] = "Las credenciales ingresadas son incorrectas.";
+          header("Location: " . URL . "home/loginAdministracion");
+          exit;
+        }
+      } else {
+        $_SESSION['errortype'] = "danger";
+        $_SESSION['errorcampos'] = "Los valores ingresados no cumplen con los parámetros,
+                                    por favor intentélo de nuevo.";
+        header("Location: " . URL . "home/loginAdministracion");
+        exit;
+      }
+    } else {
+      header("Location: " . URL . "home/loginAdministracion");
+      exit;
+    }
+  }
+
   public function cerrarSesion()
   {
     unset(
@@ -138,8 +187,9 @@ class Home extends Controller
         $this->mdlLogin->__SET("Correo", $correo);
         $this->mdlLogin->__SET("Clave", $this->Encrypt($pass));
         $this->mdlLogin->__SET('NumeroCelular', $celular);
-        $this->mdlLogin->__SET('IdTipoAutenticacion', 1);//Mandamos el 1 como tipo de autenticación
-                                                        //ya que fue un usuario creado desde el formulario de registro.
+        $this->mdlLogin->__SET('IdTipoAutenticacion', 1); //Mandamos el 1 como tipo de autenticación.
+        //ya que fue un usuario creado desde el formulario de registro.
+
         $this->mdlLogin->__SET('Imagen', $imagen);
         $this->mdlLogin->__SET('FechaModificacion', "");
         $user = $this->mdlLogin->insertarNuevoUsuario();
@@ -163,7 +213,7 @@ class Home extends Controller
       {
         $_SESSION['errortype'] = "danger";
         $_SESSION['errorcampos'] = "Los valores ingresados no cumplen con los parámetros,
-                                    por favor vuelva a intentar";
+                                    por favor inténtalo de nuevo.";
         header("Location: " . URL . "home/registro");
         exit;
       }
@@ -198,7 +248,7 @@ class Home extends Controller
 
         if (!empty($user[0]['Correo']) && count($user[0]['Correo']) >= 1)
         {
-          // $destinatario = "jvargasp@maaji.co";
+          
           $destinatario = $user[0]['Correo'];
 
           //Titulo
@@ -229,7 +279,7 @@ class Home extends Controller
           mail($destinatario,$asunto,$cuerpo,$headers);
 
           $_SESSION['type'] = "success";
-          $_SESSION['message'] = "Por favor revisa el correo para continuar con el reestablecimiento de tu clave";
+          $_SESSION['message'] = "Por favor revisa el correo para continuar con el reestablecimiento de la clave.";
           header("Location: " . URL . "home/recuperarPassword");
           exit;
         }
@@ -237,7 +287,7 @@ class Home extends Controller
         if (empty($user[0]['Correo']))
         {
           $_SESSION['errortype'] = "danger";
-          $_SESSION['erroremail'] = "No se encontrarón registros del correo ingresado";
+          $_SESSION['erroremail'] = "El correo ingresado no se encontró en la base de datos.";
           header("Location: " . URL . "home/recuperarPassword");
           exit;
         }

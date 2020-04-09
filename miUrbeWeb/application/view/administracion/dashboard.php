@@ -6,7 +6,7 @@
       &nbsp;
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5">
-      <h1 class="titleadmindashboard">mis Urbe Administraciones</h1>
+      <h1 class="titleadmindashboard">mi Urbe Administraciones</h1>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-4">
       <button type="button" name="new" id="adicionar"><a href="<?= URL; ?>administracion/nuevaUrbanizacion">Adicionar</a></button>

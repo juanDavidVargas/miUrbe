@@ -113,22 +113,22 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-2 col-sm-2 col-md-2">
+    <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4">
       <p>&nbsp;</p>
     </div>
-    <div class="col-xs-2 col-sm-2 col-md-2">
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
       <a href="#"><img src="<?= URL; ?>img/logo-facebook.jpg" alt="logo facebook"></a>
     </div>
-    <div class="col-xs-2 col-sm-2 col-md-2">
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
       <a href="#"><img src="<?= URL; ?>img/logo-google.jpg" alt="logo google"></a>
     </div>
-    <div class="col-xs-2 col-sm-2 col-md-2">
+    <!-- <div class="col-xs-2 col-sm-2 col-md-2">
       <a href="#"><img src="<?= URL; ?>img/logo-instagram.jpg" alt="logo instagram"></a>
     </div>
     <div class="col-xs-2 col-sm-2 col-md-2">
       <a href="#"><img src="<?= URL; ?>img/logo-twitter.jpg" alt="logo twitter"></a>
-    </div>
-    <div class="col-xs-2 col-sm-2 col-md-2">
+    </div> -->
+    <div class="col-xs-2 col-sm-2 col-md-4 col-lg-2">
       <p>&nbsp;</p>
     </div>
   </div>

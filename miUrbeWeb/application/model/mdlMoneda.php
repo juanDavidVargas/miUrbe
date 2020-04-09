@@ -31,16 +31,14 @@ class mdlMoneda
 
   public function consultarMonedas()
   {
-    $sql = "CAll SP_consultarMonedas()";
+    $sql = "CALL SP_consultarMonedas()";
     try {
       $stm = $this->db->prepare($sql);
       $stm->execute();
       return $stm->fetchAll(PDO::FETCH_ASSOC);
-      return $result;
     } catch (PDOException $e) {
       echo $e->getMessage();
     }
   }
-
-  }
- ?>
+}
+?>

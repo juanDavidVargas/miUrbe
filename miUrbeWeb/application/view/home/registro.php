@@ -17,6 +17,8 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
+
+      <!-- Mensajes de validación -->
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-3">
           &nbsp;
@@ -56,6 +58,7 @@
           &nbsp;
         </div>
       </div>
+      <!-- Fin mensajes de validación -->
 
       <h1 class="titleregistro">mi Registro</h1>
     </div>
